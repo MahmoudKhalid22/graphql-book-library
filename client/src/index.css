@@ -18,3 +18,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.loading,
+.error {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.error {
+  color: #ff3344;
+}
