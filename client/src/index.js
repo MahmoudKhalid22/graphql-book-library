@@ -12,7 +12,7 @@ import {
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 const client = new ApolloClient({
-  uri: "http://localhost:5000/graphql",
+  uri: "https://graphql-book-library.onrender.com/",
   cache: new InMemoryCache(),
 });
 
