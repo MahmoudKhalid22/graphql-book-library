@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { useQuery } from "@apollo/client";
-import { getAuthors } from "../queries/queries";
+import { useQuery, useMutation } from "@apollo/client";
+import { getAuthors, ADD_BOOK_MUTATION } from "../queries/queries";
 
 function AddBook() {
   const [authorData, setAuthorData] = useState({
@@ -10,10 +10,28 @@ function AddBook() {
   });
 
   const { data } = useQuery(getAuthors);
+  const [addBook] = useMutation(ADD_BOOK_MUTATION);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(authorData);
+    try {
+      await addBook({
+        variables: {
+          name: authorData.name,
+          genre: authorData.genre,
+          authorId: authorData.authorId,
+        },
+      });
+      setAuthorData({
+        ...authorData,
+        name: "",
+        genre: "",
+        authorId: "",
+      });
+      window.location.reload();
+    } catch (error) {
+      console.error("Error adding book:", error);
+    }
   };
 
   return (
