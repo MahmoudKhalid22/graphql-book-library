@@ -43,7 +43,7 @@ form .field {
   gap: 10px;
 }
 form label {
-  text-align: right;
+  text-align: left;
   padding: 6px;
 }
 
@@ -51,7 +51,10 @@ form select,
 form input {
   margin: 4px;
   padding: 6px;
-  font-size: 1.5rem;
+  /* font-size: 1.5rem; */
+}
+.form-container {
+  margin-bottom: 2rem;
 }
 form button {
   color: #fff;
@@ -65,6 +68,7 @@ form button {
   position: absolute;
   bottom: 10px;
   transition: 0.3s ease;
+  /* margin-top: 2rem; */
 }
 form button:hover {
   background-color: #6d0c36;

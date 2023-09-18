@@ -1,13 +1,14 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const cors = require('cors');
+const cors = require("cors");
+require("dotenv").config();
 const { graphqlHTTP } = require("express-graphql");
 const schema = require("./schema/schema");
 
 const app = express();
-
+const PORT = process.env.PORT;
 // CONNECTING TO DB
-mongoose.connect("mongodb://127.0.0.1:27017/book-library", {
+mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
 });
 mongoose.connection.once("open", () => console.log("Connected to db"));
@@ -22,4 +23,4 @@ app.use(
   })
 );
 
-app.listen(5000, () => console.log("Server is running"));
+app.listen(PORT, () => console.log("Server is running"));
