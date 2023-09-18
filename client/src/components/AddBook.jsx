@@ -1,6 +1,10 @@
 import React, { useState } from "react";
-import { useQuery, useMutation } from "@apollo/client";
-import { getAuthors, ADD_BOOK_MUTATION } from "../queries/queries";
+import { useQuery, useMutation, RefetchQueriesResult } from "@apollo/client";
+import {
+  getAuthors,
+  ADD_BOOK_MUTATION,
+  graphqlQueryBook,
+} from "../queries/queries";
 
 function AddBook() {
   const [authorData, setAuthorData] = useState({
@@ -21,6 +25,7 @@ function AddBook() {
           genre: authorData.genre,
           authorId: authorData.authorId,
         },
+        refetchQueries: [{ query: graphqlQueryBook }],
       });
       setAuthorData({
         ...authorData,
@@ -28,7 +33,8 @@ function AddBook() {
         genre: "",
         authorId: "",
       });
-      window.location.reload();
+      // window.location.reload();
+      // RefetchQueriesResult: [{ query: graphqlQueryBook }];
     } catch (error) {
       console.error("Error adding book:", error);
     }
