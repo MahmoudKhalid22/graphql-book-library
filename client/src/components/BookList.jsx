@@ -13,7 +13,7 @@ function BookList() {
   }
 
   return (
-    <>
+    <div className="book-list">
       {data?.books.map((book) => (
         <li key={book.id} onClick={(e) => setBookId(book.id)}>
           {book.name}
@@ -21,7 +21,7 @@ function BookList() {
       ))}
       {console.log(bookId)}
       <BookDetails bookId={bookId} />
-    </>
+    </div>
   );
 }
 

@@ -12,15 +12,16 @@ function BookDetails({ bookId }) {
   const { book } = data;
   if (book) {
     return (
-      <div>
-        <h2>{book.name}</h2>
-        <p>{book.genre}</p>
-        <p>{book.author.name}</p>
+      <div className="book-details">
+        <h2>Name: {book.name}</h2>
+        <p>Genre: {book.genre}</p>
+        <p>Author: {book.author.name}</p>
         <p>
-        {book.author.books?.map((item) => (
-          <li key={item.id}>{item.name}</li>
-        ))}
-      </p>
+          <p>All books for the author</p>
+          {book.author.books?.map((item) => (
+            <li key={item.id}>{item.name}</li>
+          ))}
+        </p>
       </div>
     );
   } else {

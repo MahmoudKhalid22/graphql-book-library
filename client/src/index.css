@@ -4,20 +4,96 @@
   box-sizing: border-box;
 }
 body {
-  margin: 0;
-  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; */
+  margin: 2rem;
   background-color: #eee;
   font-family: "Nunito Sans", sans-serif;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.App {
+  width: 60%;
+  height: 100%;
 }
+.App h1 {
+  color: #444;
+  text-align: center;
+}
+.book-list li {
+  list-style: none;
+  display: inline-block;
+  margin: 0.9rem;
+  padding: 0.75rem;
+  border-radius: 4px;
+  border: 1px solid #880e4f;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  color: #880e4f;
+}
+
+form {
+  background-color: #fff;
+  padding: 1.25rem;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 400px;
+}
+
+form .field {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+form label {
+  text-align: right;
+  padding: 6px;
+}
+
+form select,
+form input {
+  margin: 4px;
+  padding: 6px;
+  font-size: 1.5rem;
+}
+form button {
+  color: #fff;
+  background-color: #ad1457;
+  font-size: 2rem;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  padding: 0 10px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 10px;
+  transition: 0.3s ease;
+}
+form button:hover {
+  background-color: #6d0c36;
+}
+
+.book-details {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 40%;
+  height: 100%;
+  background-color: #ad1457;
+  padding: 2rem;
+  overflow: auto;
+  color: #fff;
+  box-shadow: -2px -3px 5px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.book-details li {
+  display: block;
+  color: #fff;
+  list-style: disc;
+}
+p {
+  font-size: 1.5rem;
+}
+
 .loading,
 .error {
   text-align: center;
@@ -27,4 +103,26 @@ code {
 
 .error {
   color: #ff3344;
+}
+@media (max-width: 767px) {
+  form {
+    width: 45%;
+  }
+  form .field {
+    grid-template-columns: 1fr;
+  }
+  form input,
+  form select {
+    width: 100%;
+    font-size: 0.75rem;
+  }
+  form label {
+    text-align: left;
+  }
+  form button {
+    margin-top: 1.5rem;
+  }
+  p {
+    font-size: 1rem;
+  }
 }
