@@ -38,4 +38,5 @@ The GraphQL Book Library is a web-based application that allows users to manage 
 ## Contributing
 Contributions to this project are welcome. Please follow the guidelines in the respective README files in the client and server directories for contribution instructions.
 
+## Live Demo
 [Live Demo](https://graphql-book-library.netlify.app)
