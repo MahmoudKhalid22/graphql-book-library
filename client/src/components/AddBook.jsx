@@ -34,6 +34,7 @@ function AddBook() {
         genre: "",
         authorId: "",
       });
+      setFormShow(false);
     } catch (error) {
       console.error("Error adding book:", error);
     }
@@ -48,6 +49,7 @@ function AddBook() {
             <input
               id="bookname"
               type="text"
+              value={authorData.name}
               onChange={(e) =>
                 setAuthorData({ ...authorData, name: e.target.value })
               }
@@ -57,6 +59,7 @@ function AddBook() {
             <label htmlFor="genre">Genre:</label>
             <input
               id="genre"
+              value={authorData.genre}
               type="text"
               onChange={(e) =>
                 setAuthorData({ ...authorData, genre: e.target.value })

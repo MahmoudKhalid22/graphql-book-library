@@ -12,7 +12,7 @@ body {
   width: 60%;
   height: 100%;
 }
-.App h1 {
+h1 {
   color: #444;
   text-align: center;
 }
@@ -75,6 +75,7 @@ form button:hover {
 }
 .btn-show {
   position: absolute;
+  display: none;
   top: 13rem;
   bottom: 100%;
   z-index: 12;
@@ -84,10 +85,10 @@ form button:hover {
   border: none;
   outline: none;
   font-size: 2rem;
-  display: none;
+
   width: 30px;
   height: 30px;
-  display: flex;
+
   align-items: center;
   justify-content: center;
 }
