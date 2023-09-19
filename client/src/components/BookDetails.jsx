@@ -7,7 +7,7 @@ function BookDetails({ bookId }) {
     variables: { id: bookId },
   });
   if (loading) return <p className="loading">Loading...</p>;
-  if (error) return <p className="">No Selected Books.</p>;
+  if (error) return <p className="no-selected">No Selected Books.</p>;
 
   const { book } = data;
   if (book) {

@@ -109,8 +109,26 @@ p {
   color: #ff3344;
 }
 @media (max-width: 767px) {
+  .App {
+    width: 90%;
+    overflow: scroll;
+  }
+  .book-list {
+    display: flex;
+  }
+  .no-selected {
+    position: absolute;
+    top: 15rem;
+  }
+  .book-details {
+    position: absolute;
+    top: 50%;
+    height: 50%;
+    width: 100%;
+  }
   form {
     width: 45%;
+    display: none;
   }
   form .field {
     grid-template-columns: 1fr;
