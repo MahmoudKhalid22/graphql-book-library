@@ -73,6 +73,24 @@ form button {
 form button:hover {
   background-color: #6d0c36;
 }
+.btn-show {
+  position: absolute;
+  top: 13rem;
+  bottom: 100%;
+  z-index: 12;
+  background-color: #ad1457;
+  color: #fff;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  font-size: 2rem;
+  display: none;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .book-details {
   position: fixed;
@@ -113,12 +131,17 @@ p {
     width: 90%;
     overflow: scroll;
   }
+  .btn-show {
+    display: flex;
+    right: 1rem;
+  }
   .book-list {
     display: flex;
   }
   .no-selected {
     position: absolute;
     top: 15rem;
+    right: 1rem;
   }
   .book-details {
     position: absolute;
@@ -127,8 +150,14 @@ p {
     width: 100%;
   }
   form {
-    width: 45%;
-    display: none;
+    width: 50%;
+    position: absolute;
+    transform: translateX(-100%);
+    z-index: 50;
+    transition: 0.3s ease;
+  }
+  form.active {
+    transform: translateX(0);
   }
   form .field {
     grid-template-columns: 1fr;

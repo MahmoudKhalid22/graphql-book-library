@@ -12,6 +12,7 @@ function AddBook() {
     genre: "",
     authorId: "",
   });
+  const [formShow, setFormShow] = useState(false);
 
   const { data } = useQuery(getAuthors);
   const [addBook] = useMutation(ADD_BOOK_MUTATION);
@@ -40,8 +41,8 @@ function AddBook() {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <div className="form-container"> 
+      <form onSubmit={handleSubmit} className={formShow ? "active" : ""}>
+        <div className="form-container">
           <div className="field">
             <label htmlFor="bookname">Book name:</label>
             <input
@@ -81,6 +82,9 @@ function AddBook() {
         </div>
         <button type="submit">+</button>
       </form>
+      <button className="btn-show" onClick={() => setFormShow((prev) => !prev)}>
+        +
+      </button>
     </div>
   );
 }
